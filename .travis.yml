@@ -11,10 +11,12 @@ install:
 
 script:
     - BASE_COMMIT=$(git rev-parse $TRAVIS_BRANCH)
+    - |
       echo "Running yapf against branch $TRAVIS_BRANCH with commit $BASE_COMMIT."
       echo
 
-      COMMIT_FILES=$(git diff --name-only $BASE_COMMIT | grep -i .py)
+    - COMMIT_FILES=$(git diff --name-only $BASE_COMMIT | grep -i .py)
+    - |
       echo "Changed files with postfix .py:"
       for FILE in $COMMIT_FILES; do
           echo $FILE
@@ -25,7 +27,8 @@ script:
       fi
       echo
 
-      echo "Yapf diff on changed files:"
+    - echo "Yapf diff on changed files:"
+    - |
       yapf --diff $COMMIT_FILES
       RESULT_OUTPUT=$(yapf --diff $COMMIT_FILES)
       if [ -z "$RESULT_OUTPUT" ]; then
