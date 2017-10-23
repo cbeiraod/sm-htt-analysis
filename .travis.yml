@@ -17,14 +17,14 @@ script:
 
     - COMMIT_FILES=$(git diff --name-only $BASE_COMMIT | grep -i .py)
     - |
-      echo "Changed files with postfix .py:"
-      for FILE in $COMMIT_FILES; do
-          echo $FILE
-      done
       if [ -z "$COMMIT_FILES" ]; then
           echo "No files changed with postfix .py."
           exit 0
       fi
+      echo "Changed files with postfix .py:"
+      for FILE in $COMMIT_FILES; do
+          echo $FILE
+      done
       echo
 
     - echo "Yapf diff on changed files:"
