@@ -3,6 +3,7 @@
 echo "Running yapf against branch $TRAVIS_BRANCH with commit $TRAVIS_COMMIT."
 echo
 
+git diff --name-only $TRAVIS_COMMIT
 COMMIT_FILES=$(git diff --name-only $TRAVIS_COMMIT | grep -i .py)
 if [ -z "$COMMIT_FILES" ]; then
     echo "No files changed with postfix .py."
