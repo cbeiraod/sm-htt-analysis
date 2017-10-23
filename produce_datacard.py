@@ -11,6 +11,7 @@ logger = logging.getLogger("")
 
 
 def setup_logging(output_file, level=logging.DEBUG):
+    x = 1
     logger.setLevel(level)
     formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
 
