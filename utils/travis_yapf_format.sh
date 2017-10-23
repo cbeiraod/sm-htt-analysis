@@ -18,6 +18,7 @@ echo
 echo "Yapf diff on changed files:"
 yapf --diff $COMMIT_FILES
 RESULT_OUTPUT=$(yapf --diff $COMMIT_FILES)
+echo
 
 if [ -z "$RESULT_OUTPUT" ]; then
     echo "Yapf did not apply any formatting."
