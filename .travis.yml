@@ -15,16 +15,12 @@ script:
       echo "Running yapf against branch $TRAVIS_BRANCH with commit $BASE_COMMIT."
       echo
 
-    - echo "BASE COMMIT:" $BASE_COMMIT
-    - git diff --name-only $BASE_COMMIT
-    - git diff --name-only $BASE_COMMIT | grep -i .py
-    - COMMIT_FILES=$(git diff --name-only $BASE_COMMIT | grep -i .py)
-    - |
-      if [ -z "$COMMIT_FILES" ]; then
+    - COMMIT_FILES=$(git diff --name-only $BASE_COMMIT | grep -i .py) && true
+    - echo "COMMIT FILES:" $COMMIT_FILES
+    - if [ -z "$COMMIT_FILES" ]; then
           echo "No files changed with postfix .py."
           exit 0
       fi
-    - |
       echo "Changed files with postfix .py:"
       for FILE in $COMMIT_FILES; do
           echo $FILE
@@ -32,11 +28,9 @@ script:
       echo
 
     - echo "Yapf diff on changed files:"
-    - |
-      yapf --diff $COMMIT_FILES
+    - yapf --diff $COMMIT_FILES
       RESULT_OUTPUT=$(yapf --diff $COMMIT_FILES)
-    - |
-      if [ -z "$RESULT_OUTPUT" ]; then
+    - if [ -z "$RESULT_OUTPUT" ]; then
           echo "Yapf did not apply any formatting."
           exit 0
       fi
