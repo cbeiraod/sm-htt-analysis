@@ -21,6 +21,7 @@ script:
           echo "No files changed with postfix .py."
           exit 0
       fi
+    - |
       echo "Changed files with postfix .py:"
       for FILE in $COMMIT_FILES; do
           echo $FILE
@@ -31,10 +32,11 @@ script:
     - |
       yapf --diff $COMMIT_FILES
       RESULT_OUTPUT=$(yapf --diff $COMMIT_FILES)
+    - |
       if [ -z "$RESULT_OUTPUT" ]; then
           echo "Yapf did not apply any formatting."
           exit 0
       fi
-      echo
+    - |
       echo "Please fix the formatting using the diff shown above."
       exit 1
