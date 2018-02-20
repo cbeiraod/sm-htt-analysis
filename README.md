@@ -1,5 +1,17 @@
 # Standard Model Higgs boson to two tau leptons analysis
 
+## Initial setup
+Clone the repository:
+```sh
+git clone [repo]
+```
+
+Initialize and then update the submodules:
+```sh
+git submodule init
+git submodule update
+```
+
 ## Convention of process names
 Signals: ggH, qqH, WH, ZH, total: HTT
 Backgrounds: W, QCD, TTT, TTJ (only TT in emu), ZL, ZJ, ZT
