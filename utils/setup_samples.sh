@@ -7,4 +7,4 @@ ARTUS_FRIENDS_ET=/lstore/cms/cbeiraod/HTT/Artus_2017-12-02/et_keras_4
 ARTUS_FRIENDS_MT=/lstore/cms/cbeiraod/HTT/Artus_2017-12-02/mt_keras_4
 ARTUS_FRIENDS_TT=/lstore/cms/cbeiraod/HTT/Artus_2017-12-02/tt_keras_4
 
-KAPPA_DATABASE=/storage/c/wunsch/kappa_database/datasets_2017-12-05.json
+KAPPA_DATABASE=/lstore/cms/cbeiraod/HTT/Artus_2017-12-02/datasets_2017-12-05.json
