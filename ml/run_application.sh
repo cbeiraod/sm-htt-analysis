@@ -13,8 +13,8 @@ python ml/write_application_filelist.py \
     --output ml/${CHANNEL}/application_filelist.yaml
 
 export KERAS_BACKEND=theano
-export OMP_NUM_THREADS=1
-export THEANO_FLAGS=gcc.cxxflags=-march=corei7
+export OMP_NUM_THREADS=12
+#export THEANO_FLAGS=gcc.cxxflags=-march=corei7
 
 python ml/run_application.py \
     --dataset-config ml/${CHANNEL}/dataset_config.yaml \
