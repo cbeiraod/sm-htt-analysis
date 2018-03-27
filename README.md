@@ -12,6 +12,11 @@ git submodule init
 git submodule update
 ```
 
+If necessary, initialize CMSSW:
+```sh
+./utils/init_cmssw.sh
+```
+
 ## Convention of process names
 Signals: ggH, qqH, WH, ZH, total: HTT
 Backgrounds: W, QCD, TTT, TTJ (only TT in emu), ZL, ZJ, ZT
